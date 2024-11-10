@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FAQ</title>
+	<meta charset="utf-8">
+	<style>
+		html, body{
+		height: 100%;
+		}
+
+		body{
+			margin: 0 0;
+			position: relative;
+			font-size: 14px;
+			color: #333;
+			font-family: 'Roboto', sans-serif;
+		}
+
+		img{
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 10px;
+		margin-bottom: 20px;
+		}
+
+		a, a:hover, a:active, a:focus, a:active:focus{
+			color: #337ab7;
+			text-decoration: none;
+		}
+
+		#main-menu{
+			padding-top: 10px;
+			padding-left: 10px;
+			padding-bottom: 30px;
+		}
+
+		#main-menu ul{
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			background-color: #e9d8f4;
+		}
+		#main-menu ul li{
+			float: left;
+			padding: 10px 15px;
+			border-bottom: 1px;
+		}
+		#main-menu ul li.active{
+			background-color: #81DAF5;
+			color: white;
+			font-weight: bold;
+		}
+
+		.clear-float{
+			clear: both;
+		}
+
+		/* lightbox */
+		#lightbox{
+			position: fixed;
+			z-index: 1;
+			left: 0;
+			top: 0;
+			padding-top: 50px;
+			width: 100%;
+			height: 100%;
+			display: none;
+			background-color: rgba(0,0,0,0.8);
+		}
+		#image-placeholder{
+			margin: auto;
+			display: block;
+			width: 80%;
+		}
+		#close-icon{
+			position: absolute;
+			top: 25px;
+			right: 25px;
+			color: #f1f1f1;
+			font-size: 50px;
+			cursor: pointer;
+		}
+
+		/* faq */
+		.item-wrapper{
+			margin-bottom: 20px;
+			border: 1px solid #ddd;
+			border-radius: 4px;
+		}
+		.question{
+			background-color: #f5f5f5;
+			padding: 10px 15px;
+		}
+		.answer{
+			padding: 15px;
+			display: none;
+		}
+		.toggle-display{
+			border: 1px solid #aaa;
+			padding: 1px 5px;
+			margin-right: 5px;
+			cursor: pointer;
+		}
+
+		#footer{
+				position: relative;
+				padding: 10px 0;
+				width: 100%;
+				bottom: 0;
+		}
+	</style>
+</head>
+<body>
+	<!-- menu -->
+	<div id="main-menu">
+		<ul>
+			<li>
+				<a href="./home.html" title="Home">Home</a>
+			</li>
+			<li>
+				<a href="./ctrlpage.html" title="Control">Control</a>
+			</li>
+			<li>
+				<a href="./contact.html" title="Contact">Contact</a>
+			</li>
+			<li class="active">
+				<a href="./faq.html" title="FAQ">FAQ</a>
+			</li>
+		</ul>
+	</div>
+	<div class="clear-float"></div>
+	<div>
+		<div>
+			<img src="./img/faq.png" alt="FAQs" style="width:80%">
+		</div>
+		<div class="item-wrapper">
+			<div class="question">
+				<strong class="toggle-display">+</strong> If we have questions or are not satisfied with the service, which department can we complain to?
+			</div>
+			<div class="answer">
+				If you are not satisfied with the service provided by our company, you can contact our Customer Care department, we are always willing to support any questions or complaints about the service.
+			</div>
+		</div>
+		<div class="item-wrapper">
+			<div class="question">
+				<strong class="toggle-display">+</strong> How long does it take to receive a response to a service inquiry or complaint?
+			</div>
+			<div class="answer">
+				After receiving your inquiry or complaint, we will process the request within a maximum of 24 hours.
+			</div>
+		</div>
+		<div class="item-wrapper">
+			<div class="question">
+				<strong class="toggle-display">+</strong> Do customers receive an invoice when purchasing our services?
+			</div>
+			<div class="answer">
+				Yes, all customers receive a VAT invoice for the services provided by our company.
+			</div>
+		</div>
+		<div class="item-wrapper">
+			<div class="question">
+				<strong class="toggle-display">+</strong> What is the payment process after ordering the service?
+			</div>
+			<div class="answer">
+				After you order the service by phone, email or through any other valid transaction, you can pay via Internet Banking, ATM card or pay at our office.
+			</div>
+		</div>
+	</div>
+
+	<!-- Lightbox -->
+	<div id="lightbox">
+	  <span id="close-icon">&times;</span>
+	  <img id="image-placeholder">
+	</div>
+	<div id="footer">
+		<img src="./img/footer.png" alt="footer" style="width:100%" >
+	</div>
+	<script>
+var questions = document.getElementsByClassName('question');
+
+for (var j = 0; j < questions.length; j++) {
+	var question = questions[j];
+
+	question.onclick = function () {
+		var answer = this.nextElementSibling;
+		console.log(answer);
+
+		// hide/show answers
+		var display = answer.style.display;
+		answer.style.display = display == 'block' ? 'none' : 'block';
+
+		// change the content of the toogle display icon
+		var iconText = this.getElementsByClassName('toggle-display')[0].innerText;
+		this.getElementsByClassName('toggle-display')[0].innerText = (iconText == '+') ? '-' : '+';
+	}
+}
+	</script> 
+</body>
+</html>

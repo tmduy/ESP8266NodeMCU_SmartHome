@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Control</title>
+	<meta charset="utf-8">
+	<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+	<style>
+		html, body{
+			height: 100%;
+		}
+
+		a, a:hover, a:active, a:focus, a:active:focus{
+			color: #337ab7;
+			text-decoration: none;
+		}
+
+		#main-menu{
+			padding-top: 10px;
+			padding-left: 10px;
+			padding-bottom: 30px;
+		}
+
+		#main-menu ul{
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			background-color: #e9d8f4;
+		}
+		#main-menu ul li{
+			float: left;
+			padding: 10px 15px;
+			border-bottom: 1px;
+		}
+		#main-menu ul li.active{
+			background-color: #81DAF5;
+			color: white;
+			font-weight: bold;
+		}
+
+
+		#image-placeholder{
+				margin: auto;
+				display: block;
+				width: 80%;
+		}
+
+		#close-icon{
+				position: absolute;
+				top: 15px;
+				right: 35px;
+				color: #f1f1f1;
+				font-size: 50px;
+		}
+
+		.clear-float{
+				clear: both;
+		}
+
+		.container{
+				width: 780px;
+				margin: auto auto;
+		}
+
+		table, th, td{
+				border: 2px solid hsl(51, 90%, 12%);
+				border-collapse: collapse;
+				margin-bottom: 50px;
+		}
+
+		.b{width: 80px;height: 40px;font-size: 15px;background-color:#039708;border-radius: 10px; color: #FFFF; font-size: 20px}
+		.t{width: 80px;height: 40px;font-size: 15px;background-color:#f44336;border-radius: 10px; color: #FFFF; font-size: 20px}
+		a, a:hover, a:focus, a:active, a:active:focus{
+				color: #337ab7;
+				text-decoration: none;
+		}
+
+		body{
+				margin: 0 0;
+				position: relative;
+				font-size: 14px;
+				font-family: 'Roboto', sans-serif;
+		}
+
+		img {
+				max-width: 100%;
+		}
+
+		p{
+				text-indent: 0px;
+			}
+
+		#footer{
+				position: relative;
+				padding: 10px 0;
+				width: 100%;
+				bottom: 0;
+		}	
+		</style>
+
+</head>
+<body>
+	<!-- menu -->
+	<div id="main-menu">
+		<ul>
+			<li>
+				<a href="./home.html" title="Home">Home</a>
+			</li>
+			<li class="active">
+				<a href="./ctrlpage.html" title="Control">Control</a>
+			</li>
+			<li>
+				<a href="./contact.html" title="Contact">Contact</a>
+			</li>
+			<li>
+				<a href="./faq.html" title="FAQ">FAQ</a>
+			</li>
+		</ul>
+	</div>
+	
+	<div>
+		<p style="padding-left: 10px;"> Below is the control panel of the devices in the house: </p>
+		<div style="padding-left: 10px;">
+			<span> Alarm bell: </span> 		<span id='D3status'> OFF	 </span>
+		</div>
+		<table style="width:90%; text-align:center; font-size: 15px; margin-left:auto; margin-right:auto;">
+			<h1 style= "text-align: center;"> CONTROL PANEL </h1>
+			<tr  style= "text-align: center; background: #4CAF50; color: white">
+			  <th> <p> LOCATION   </p> </th>
+			  <th> <p> DEVICE   </p> </th>
+			  <th> <p> STATUS </p> </th>
+			  <th colspan="2"> <p> ACTION   </p> </th>
+			</tr>
+		
+			<tr style= "text-align: center">
+			  <td> <p> LIVING ROOM </p> </td>
+			  <td> <p> Lighting</p> </td>
+			  <td> <div id = "content1">  </div> </td>
+			  <td> <a href="/turnonled1"><input type = "button" class='b' id = "btn1" value = "ON"> 	 </a>  </td>
+			  <td> <a href="/turnoffled1"><input type = "button" class='t' id = "btn2" value = "OFF">  </a>  </td> 
+			</tr>
+		
+			<tr style= "text-align: center">
+			  <td> <p> BEDROOM </p> </td>
+			  <td> <p> Lighting   </p> </td>
+			  <td> <p>  </p> </td>
+			  <td> <a href='/turnonled2'><input type = "button" class='b' id = "btn3" value = "ON">   </a>  </td>
+			  <td> <a href='/turnoffled2'><input type = "button" class='t' id = "btn4" value = "OFF">   </a>  </td>
+			</tr>
+		  </table> 
+		</div>
+	
+	  
+	<div>
+		<h1 style = "text-align:center"> MONITORING PANEL </h1>
+		<table style = "width:90%; text-align:center; margin-left:auto; margin-right:auto;">
+			<tr  style="text-align:center; background:#4CAF50; font-size:17px; color:white">
+				<th><p>LOCATION</p></th>
+				<th><p>PARAMETER</p></th>
+				<th><p>VALUE</p></th>
+			</tr>
+			<tr style="text-align:center">
+				<td rowspan="2"><p>KITCHEN AREA</p></td>
+				<td><p>Temperature</p></td>
+				<td><p>    </p> </td>
+			</tr>
+			<tr style="text-align:center"> 
+				<td><p> Gas Detection </p></td>
+				<td><p>   </p></td>
+			  </tr>
+			</table> 	
+	</div>
+	<h2 style='padding-left: 10px;padding-bottom: 50px; color: red'> WARNING: In case of EMERGENCY, please contact via tmduybk@gmail.com </h2>
+	<div id="footer">
+		<img src="./img/footer.png" alt="footer" style="width:100%" >
+	</div> 
+</body>
+</html>

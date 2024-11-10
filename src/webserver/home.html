@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		html, body {
+			height: 100%;
+			margin: 0;
+			display: flex;
+			flex-direction: column;
+		}
+
+		body {
+			font-size: 14px;
+			color: #333;
+			font-family: 'Roboto', sans-serif;
+		}
+
+		.container {
+			flex: 1;
+		}
+
+		img {
+			display: block;
+			margin: 10px auto 30px auto;
+		}
+
+		a, a:hover, a:active, a:focus, a:active:focus {
+			color: #337ab7;
+			text-decoration: none;
+		}
+
+		#main-menu {
+			padding: 10px;
+		}
+
+		#main-menu ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			background-color: #e9d8f4;
+		}
+
+		#main-menu ul li {
+			float: left;
+			padding: 10px 15px;
+		}
+
+		#main-menu ul li.active {
+			background-color: #81DAF5;
+			color: white;
+			font-weight: bold;
+		}
+
+		.clear-float {
+			clear: both;
+		}
+
+		#footer {
+			width: 100%;
+			padding: 0;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<!-- Container for main content -->
+	<div class="container">
+		<div id="main-menu"> 
+			<ul>
+				<li class="active">
+					<a href="./home.html" title="Home">Home</a>
+				</li>
+				<li>
+					<a href="./ctrlpage.html" title="Control">Control</a>
+				</li>
+				<li>
+					<a href="./contact.html" title="Contact">Contact</a>
+				</li>
+				<li>
+					<a href="./faq.html" title="FAQ">FAQ</a>
+				</li>
+			</ul>
+		</div>
+		<div class="clear-float"></div>
+		<div>
+			<div>
+				<img src="./img/home.png" style="width:50%">
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+		<img src="./img/footer.png" alt="footer" style="width:100%">
+	</div>
+</body>
+</html>
